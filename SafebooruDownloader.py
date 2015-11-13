@@ -60,6 +60,10 @@ def main():
 	pagecount = 1
 	res = requests.get(userURL) # page 1  
 
+	if "Nothing found" in res.text:
+		print("No images found, check your tags?")
+		return
+
 	while True:
 
 		soup = bs4.BeautifulSoup(res.text)
@@ -67,7 +71,7 @@ def main():
 		imageLinks = get_image_links(soup, url, pagecount) # array of links to images
 		imagescount += len(imageLinks)
 
-		print("Getting images...")
+		print("Getting images, this might take a while...")
 		images = [get_image(link) for link in imageLinks] # array of image links 
 
 		for i in range(images.count(None)):
