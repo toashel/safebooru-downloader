@@ -1,4 +1,5 @@
-# safebooru-downloader
-Safebooru Downloader
+<snippet>
+  <content><![CDATA[
+# Safebooru Downloader
+Downloads all images available with matching tags from Safebooru
 
-Web scraper to download all images with specific tags from Safebooru
